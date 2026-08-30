@@ -1,0 +1,79 @@
+---
+title: I Built a Publishing System Without Becoming a Developer
+subtitle: A Sunday-evening experiment became a live website, and changed my sense of where human judgment belongs in software creation.
+seoTitle: Building a Publishing System With AI-Assisted Development
+pubDate: 2026-08-29
+category: Technology
+tags: [AI, Codex, Astro, GitHub, publishing]
+heroImage: /images/publishing-system-without-developer.png
+heroAlt: Rough paper notes passing through blue mechanical frames and rollers before emerging as a finished publication
+description: What building and deploying an Astro publication with Codex revealed about AI-assisted development, technical concepts and human judgment.
+socialCopy: I did not become a developer on Sunday evening. I did build and deploy a publishing system. The interesting part is where human judgment moved.
+sources:
+  - label: Introducing the Codex app — OpenAI
+    url: https://openai.com/index/introducing-the-codex-app/
+  - label: Astro documentation
+    url: https://docs.astro.build/
+  - label: Astro Content Collections documentation
+    url: https://docs.astro.build/en/guides/content-collections/
+  - label: Getting started with GitHub Pages — GitHub Docs
+    url: https://docs.github.com/en/pages/getting-started-with-github-pages
+---
+
+I became bored on a Sunday evening and began experimenting with OpenAI Codex. This seemed harmless enough. Within a short period, I had created a local publication, previewed it in a browser, opened a GitHub repository, connected the project, configured a deployment workflow and published the site with GitHub Pages.
+
+Then the images broke.
+
+Then the article links broke.
+
+Then I found myself discussing base paths, static routes and generated HTML with the calm specificity of someone who had apparently acquired a software project while looking for something to do before bed.
+
+The interesting part was not simply that AI could generate a website. We have seen enough demonstrations of generated interfaces for that fact to feel almost ordinary. What interested me was that I could work meaningfully with repositories, local development, deployment, routing and static-site generation without personally writing most of the implementation.
+
+I did not become a developer over the course of the evening. But I did become capable of directing a development process.
+
+## A brief tour of the machinery
+
+The system itself is uncomplicated by modern software standards, although “uncomplicated” is a description best offered after it works.
+
+Codex is OpenAI's coding agent. It can inspect a project, modify files and run commands, which makes the interaction less like asking a chatbot for a code sample and more like collaborating with someone who can work inside the actual environment. I could describe the outcome, review what changed and ask it to diagnose failures against the files it had produced.
+
+Astro is the framework underneath the publication. It is designed particularly well for content-focused websites and can turn Markdown articles into static pages. Its Content Collections feature gives those articles a defined structure: title, date, category, description, image and other metadata. Instead of maintaining pages one by one, the site uses a common article template and generates a route for every entry when it builds.
+
+GitHub stores the project in a repository, which is essentially the project's tracked history and shared source of truth. GitHub Pages takes the static output and hosts it as a public website. A GitHub Actions workflow connects the two: when changes reach the main branch, the workflow installs the project, builds the site and deploys the result.
+
+That is the clean explanation. The lived explanation included learning that a site hosted inside a repository path behaves differently from a site hosted at the root of a domain. The public address included `/field-notes/`, so images and links had to respect that base path. A URL that looked harmless locally could point somewhere entirely different after deployment.
+
+I did not fix this by suddenly remembering a rule about path resolution. I described the symptom, asked Codex to trace every internal URL, inspected the generated output and required the build to prove that links contained the deployment base. The technical concept became understandable because it was attached to a real failure with a visible consequence.
+
+## Working one level above the code
+
+Traditional programming education often begins with implementation: syntax, data types, functions, tools and increasingly complex exercises. That knowledge remains valuable. It allows a person to reason precisely about what a system is doing, anticipate failure and judge the quality of a solution at a deeper level.
+
+My route into the project ran in the opposite direction. I started with the product and encountered technical concepts as they became necessary.
+
+I knew what I wanted the publication to do. It needed sections, an archive, article pages, readable typography, dark mode and a workflow that could turn rough material into finished posts. It needed to deploy for free. It needed to remain simple enough that publishing did not become a second occupation devoted to maintaining the publishing system.
+
+Those constraints shaped the implementation. I did not need to know in advance how Astro defined a content schema. I needed to know that article metadata should be consistent and validated. I did not need to write a deployment workflow from memory. I needed to specify that a push to the main branch should build and publish the site, then verify that the workflow existed and succeeded.
+
+This is a different form of technical participation. The human contribution shifts toward framing, constraints, acceptance criteria and judgment. The machine can handle much of the translation between those decisions and the code.
+
+That shift does not make the human role smaller. Poorly framed requirements can now produce functioning software faster, which is not necessarily an improvement. A generated system can be technically correct and still solve the wrong problem, expose private information, become needlessly elaborate or create maintenance costs its owner does not understand.
+
+Someone still has to decide what should exist, what must not change, which trade-offs are acceptable and whether the result is actually good.
+
+## The knowledge I still needed
+
+AI assistance did not eliminate the need to learn. It changed the timing and depth of the learning.
+
+I had to understand enough to ask whether the project was local or public, whether a change had been committed, whether the remote repository contained the latest version and whether the deployment reflected the commit I thought it did. I learned the practical difference between a successful local build and a successful public deployment. I learned to request evidence from generated files instead of accepting “it should work” as a result.
+
+These are not coding skills in the narrow sense. They are systems skills. They make it possible to maintain a coherent mental model of what is happening, even when an agent performs the detailed work.
+
+There is an obvious danger in being able to create beyond one's ability to inspect. AI can produce a large volume of plausible implementation, and plausibility is not reliability. For projects involving money, sensitive data, security or many users, deeper technical expertise is not optional. The ease of generating software does not reduce the consequences of bad software.
+
+But a personal static publication is a useful place to test the boundary. The system is visible, reversible and relatively contained. I can open the pages, inspect the files, run the build and see what was deployed. Each failure teaches me a concept I now have a reason to remember.
+
+By the end of the experiment, I had not crossed some ceremonial line from non-developer to developer. I had done something more useful: turned an idea into a working system and acquired enough understanding to direct its next iteration.
+
+That is likely the more important change AI-assisted development offers. It does not make expertise irrelevant. It gives people with product sense, systems thinking and a clear desired outcome a new way to participate in making software. The code is still there. The doorway has moved.

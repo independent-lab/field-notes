@@ -14,6 +14,8 @@ const posts = defineCollection({
     heroImage: z.string(),
     heroAlt: z.string(),
     description: z.string(),
+    seoTitle: z.string().optional(),
+    socialCopy: z.string().optional(),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
     sources: z.array(z.object({ label: z.string(), url: z.string().url() })).optional(),
