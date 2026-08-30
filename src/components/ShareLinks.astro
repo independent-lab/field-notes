@@ -1,0 +1,47 @@
+---
+interface Props {
+  url: string;
+  title: string;
+  shareText?: string;
+  placement?: 'compact' | 'full';
+}
+
+const { url, title, shareText, placement = 'full' } = Astro.props;
+const encodedUrl = encodeURIComponent(url);
+const encodedText = encodeURIComponent(shareText ?? title);
+const links = [
+  { label: 'Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}` },
+  { label: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}` },
+  { label: 'X', href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}` },
+];
+---
+<div class:list={['share-block', `share-block--${placement}`]} aria-label={placement === 'compact' ? 'Share this article' : undefined}>
+  {placement === 'compact' ? <p class="share-label">Share</p> : <h2>Share this Field Note</h2>}
+  <div class="share-actions">
+    {links.map((link) => <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>)}
+    <button class="copy-link" type="button" data-share-url={url}>
+      <span class="copy-label">Copy Link</span>
+    </button>
+  </div>
+  <span class="copy-status" aria-live="polite"></span>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.copy-link').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const url = button.dataset.shareUrl;
+      const block = button.closest('.share-block');
+      const status = block?.querySelector<HTMLElement>('.copy-status');
+      if (!url || !status) return;
+
+      try {
+        await navigator.clipboard.writeText(url);
+        status.textContent = 'Link copied';
+      } catch {
+        status.textContent = 'Copy unavailable';
+      }
+
+      window.setTimeout(() => { status.textContent = ''; }, 2500);
+    });
+  });
+</script>
