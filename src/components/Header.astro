@@ -8,8 +8,8 @@ import { withBase } from '../lib/paths';
       <span class="brand-mark">FN</span>
       <span>Field Notes</span>
     </a>
-    <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
-      <span>Menu</span><span class="menu-chevron" aria-hidden="true">⌄</span>
+    <button class="site-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-menu">
+      <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
     </button>
   </div>
   <nav class="site-menu" id="site-menu" aria-label="Primary navigation" hidden>
@@ -39,6 +39,7 @@ import { withBase } from '../lib/paths';
     if (!menu || !menuButton) return;
     menu.hidden = true;
     menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open navigation');
     if (returnFocus) menuButton.focus();
   };
   menuButton?.addEventListener('click', () => {
@@ -46,6 +47,7 @@ import { withBase } from '../lib/paths';
     const willOpen = menu.hidden;
     menu.hidden = !willOpen;
     menuButton.setAttribute('aria-expanded', String(willOpen));
+    menuButton.setAttribute('aria-label', willOpen ? 'Close navigation' : 'Open navigation');
   });
   menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
   document.addEventListener('click', (event) => {
