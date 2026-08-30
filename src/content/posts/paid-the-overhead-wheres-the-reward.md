@@ -9,7 +9,7 @@ heroImage: /images/paid-the-overhead-reward.webp
 heroAlt: A winding maze of translucent paper barriers and brass clips leading toward a small cobalt-blue box
 description: A skeptical look at the difference between productive career friction and organizational waste, and what leaders should do about both.
 socialCopy: Difficulty is not automatically evidence of progress. The useful question is whether the overhead is buying scope, capability, authority, or a credible next step.
-featured: true
+featured: false
 sources:
   - label: Same as Ever by Morgan Housel — Harriman House
     url: https://www.harriman-house.com/sameasever

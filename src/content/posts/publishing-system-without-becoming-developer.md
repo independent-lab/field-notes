@@ -9,6 +9,7 @@ heroImage: /images/publishing-system-without-developer.webp
 heroAlt: Rough paper notes passing through blue mechanical frames and rollers before emerging as a finished publication
 description: What building and deploying an Astro publication with Codex revealed about AI-assisted development, technical concepts and human judgment.
 socialCopy: I did not become a developer on Sunday evening. I did build and deploy a publishing system. The interesting part is where human judgment moved.
+featured: false
 sources:
   - label: Introducing the Codex app — OpenAI
     url: https://openai.com/index/introducing-the-codex-app/

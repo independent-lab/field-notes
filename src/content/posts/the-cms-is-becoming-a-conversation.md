@@ -2,7 +2,7 @@
 title: The CMS Is Becoming a Conversation
 subtitle: In one small publication, instructions are beginning to replace the dashboard between an idea and the live site.
 seoTitle: The CMS Is Becoming a Conversation
-pubDate: 2026-09-03
+pubDate: 2026-08-30
 category: Technology
 tags: [publishing, CMS, AI, Astro, GitHub]
 heroImage: /images/cms-conversation.webp
@@ -10,7 +10,7 @@ heroAlt: A blue speech bubble moving through paper publishing machines and emerg
 description: Field Notes is testing a conversational publishing workflow built from Markdown, Astro, Git and an AI coding agent—not a replacement for every CMS.
 socialCopy: For this one-person publication, the CMS is becoming less like a dashboard and more like a conversation.
 featured: false
-draft: true
+draft: false
 ---
 
 A content management system usually announces itself with an interface: a dashboard, text editor, media library, fields and a button whose meaning ranges from “save” to “tell the entire internet immediately.”

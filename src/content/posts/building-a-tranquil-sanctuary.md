@@ -7,6 +7,7 @@ tags: ["Home", "DIY", "Making", "Mindfulness", "From the archive"]
 heroImage: "/images/tranquil-steel-rack.jpg"
 heroAlt: "The boxed steel shelving unit laid out on a bed before assembly"
 description: "An inexpensive shelving project became a calming hands-on ritual and a more personal corner of home."
+featured: false
 sources:
   - label: "Original Siklab Serye publication"
     url: "https://julessalonga.wixsite.com/siklab-serye/post/building-a-tranquil-sanctuary-my-1-000-peso-steel-rack-project"
@@ -30,4 +31,3 @@ Once it was standing, the useful part of the project was complete. The more pers
 It was still an inexpensive rack. But the things it gathered—and the small act of making space for them—changed the corner around it.
 
 The project reminded me that calm does not always require getting away from ordinary life. Sometimes it comes from working with your hands, placing one piece after another, and giving the things you care about somewhere to belong.
-

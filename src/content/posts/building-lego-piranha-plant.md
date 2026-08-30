@@ -7,6 +7,7 @@ tags: ["LEGO", "Super Mario", "Nintendo", "Making", "From the archive"]
 heroImage: "/images/lego-piranha-plant.jpg"
 heroAlt: "A completed LEGO Super Mario Piranha Plant displayed beside a computer monitor"
 description: "Building LEGO's Super Mario Piranha Plant became a tactile return to childhood afternoons in the Mushroom Kingdom."
+featured: false
 sources:
   - label: "Original Siklab Serye publication"
     url: "https://julessalonga.wixsite.com/siklab-serye/post/building-the-lego-super-mario-71426-piranha-plant-a-nostalgic-journey"
@@ -30,4 +31,3 @@ The finished model is playful and immediately recognizable. Its movable head, mo
 That is what I enjoyed most about the set. It connected two kinds of play: the digital rhythm of running and jumping through Mario’s worlds, and the physical satisfaction of making something one brick at a time.
 
 The completed Piranha Plant is a modern display piece, but the memory inside it is much older.
-

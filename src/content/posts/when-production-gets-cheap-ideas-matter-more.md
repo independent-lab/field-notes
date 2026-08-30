@@ -9,6 +9,7 @@ heroImage: /images/production-cheap-ideas-matter.webp
 heroAlt: A field of repeated ivory cards surrounding one cobalt-blue card marked with a singular orange gesture
 description: If AI makes drafting and publishing dramatically easier, original perspective, judgment, curiosity and taste become more valuable, not less.
 socialCopy: When production becomes abundant, the scarce part is not another finished page. It is the judgment and original thought that give the page a reason to exist.
+featured: false
 sources:
   - label: Introducing the Codex app — OpenAI
     url: https://openai.com/index/introducing-the-codex-app/

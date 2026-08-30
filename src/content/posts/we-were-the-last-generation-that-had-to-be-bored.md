@@ -2,15 +2,15 @@
 title: We Were the Last Generation That Had to Be Bored
 subtitle: Empty time once arrived without an escape hatch. We may have lost more than the waiting.
 seoTitle: We Were the Last Generation That Had to Be Bored
-pubDate: 2026-09-01
+pubDate: 2026-08-30
 category: Thinking
 tags: [boredom, attention, curiosity, culture, Gen X]
 heroImage: /images/last-generation-bored.webp
 heroAlt: A paper clock and empty chair beside loose shapes becoming a small handmade machine
 description: Infinite entertainment has made boredom optional, but empty time once gave curiosity, imagination and unexpected projects somewhere to begin.
 socialCopy: We engineered boredom out of daily life. The interesting question is what else disappeared with it.
-featured: false
-draft: true
+featured: true
+draft: false
 ---
 
 There was a time when boredom was not a wellness challenge, a parenting controversy or a condition to be optimized. It was simply part of the day. It arrived in waiting rooms, slow afternoons, long journeys and all the small gaps between whatever had just happened and whatever might happen next.

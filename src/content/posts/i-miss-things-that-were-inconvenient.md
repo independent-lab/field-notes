@@ -2,7 +2,7 @@
 title: I Miss Things That Were Inconvenient
 subtitle: Convenience removes effort beautifully. Sometimes it takes the ritual, anticipation and accidental discovery with it.
 seoTitle: I Miss Things That Were Inconvenient
-pubDate: 2026-09-05
+pubDate: 2026-08-30
 category: Culture
 tags: [convenience, rituals, physical media, discovery, Gen X]
 heroImage: /images/inconvenient-things.webp
@@ -10,7 +10,7 @@ heroAlt: Paper media, a folded magazine and a tuning dial beside a smooth blue s
 description: Modern convenience is genuinely wonderful, but some old frictions created rituals, anticipation, discovery and attachment around ordinary things.
 socialCopy: Some inconvenient things were not better. They simply created experiences around themselves that convenience can quietly remove.
 featured: false
-draft: true
+draft: false
 ---
 
 I miss things that were inconvenient, which is not the same as wanting inconvenience back.

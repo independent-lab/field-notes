@@ -7,6 +7,7 @@ tags: ["Bacon and Beer", "Bulldogs", "Pet care", "From the archive"]
 heroImage: "/images/bacon-beer-vet-visit.jpg"
 heroAlt: "Bacon and Beer, two English bulldogs, waiting together outside an elevator"
 description: "A routine vet visit with Bacon and Beer revealed an unseen fungal problem and reinforced the value of paying attention."
+featured: false
 sources:
   - label: "Original Siklab Serye publication"
     url: "https://julessalonga.wixsite.com/siklab-serye/post/a-tail-of-two-bulldogs-vaccines-fungal-woes-and-the-72-pound-adventures-of-bacon-and-beer"
@@ -34,4 +35,3 @@ With guidance from their vet, they began treatment and the slow trip back to hea
 The day changed how I thought about a routine appointment. Vaccines mattered, but the visit also gave a trained pair of eyes the chance to notice something we had missed.
 
 Bacon and Beer’s story is not a universal guide to canine health, and another dog’s symptoms may mean something different. For us, it was a lesson in observation: preventive care is partly about creating opportunities to catch the quiet problems before they grow louder.
-

@@ -7,6 +7,7 @@ tags: ["AI", "HTML", "Games", "Filipino folklore", "From the archive"]
 heroImage: "/images/diwata-vs-kapre-game.jpg"
 heroAlt: "Pixel-art scene showing Diwata and Kapre facing each other in a jungle game world"
 description: "A 2023 experiment in using DALL-E and HTML to create the Filipino folklore game Diwata vs. Kapre without prior coding experience."
+featured: false
 sources:
   - label: "Original Siklab Serye publication"
     url: "https://julessalonga.wixsite.com/siklab-serye/post/unveiling-the-magic-creating-a-game-with-ai-and-html"
@@ -30,4 +31,3 @@ With *Diwata vs. Kapre*, I wanted to see what could happen when tradition met a 
 ## 2026 preservation note
 
 The original character art, background, and game assets survive in the Siklab Serye media archive. The original playable code has not yet been confidently recovered, so the game is not being presented as restored. It remains a candidate for a faithful playX rebuild alongside this historical account.
-

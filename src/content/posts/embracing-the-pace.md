@@ -7,6 +7,7 @@ tags: ["New Year", "Mindfulness", "Reflection", "From the archive"]
 heroImage: "/images/embracing-the-pace.jpg"
 heroAlt: "Illustrated path winding toward a sunrise over a calm sea"
 description: "A New Year reflection on choosing mindful progress over speed and finding meaning in ordinary moments."
+featured: false
 sources:
   - label: "Original Siklab Serye publication"
     url: "https://julessalonga.wixsite.com/siklab-serye/post/embracing-the-pace-a-guide-to-navigating-the-new-year-with-grace-and-purpose"
@@ -44,4 +45,3 @@ Progress is often easier to see in retrospect. Celebrating small milestones keep
 There is joy in ordinary things, too: morning coffee, a quiet sunset, a task completed with attention. These moments may not look like achievement, but they are part of a life being lived.
 
 As the year begins, I want to measure success less by speed and more by depth—by what I understand, what I notice, and how fully I am present for it. Embrace the pace. A small step can still be a step toward something meaningful.
-
