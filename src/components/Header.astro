@@ -1,0 +1,30 @@
+---
+import { categories } from '../content.config';
+const base = import.meta.env.BASE_URL;
+---
+<header class="site-header">
+  <a class="brand" href={base} aria-label="Field Notes home">
+    <span class="brand-mark">FN</span>
+    <span>Field Notes</span>
+  </a>
+  <nav aria-label="Primary navigation">
+    <div class="section-links">
+      {categories.map((category) => <a href={`${base}category/${category.toLowerCase()}/`}>{category}</a>)}
+    </div>
+    <div class="utility-links">
+      <a href={`${base}archive/`}>Archive</a>
+      <a href={`${base}about/`}>About</a>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+        <span class="sun" aria-hidden="true">☼</span><span class="moon" aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </nav>
+</header>
+<script is:inline>
+  const button = document.querySelector('.theme-toggle');
+  button?.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('theme', next);
+  });
+</script>

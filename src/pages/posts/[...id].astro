@@ -1,0 +1,27 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const base = import.meta.env.BASE_URL;
+const date = post.data.pubDate.toLocaleDateString('en', { month: 'long', day: 'numeric', year: 'numeric' });
+---
+<BaseLayout title={post.data.title} description={post.data.description} image={post.data.heroImage}>
+  <article>
+    <header class="article-header">
+      <p class="kicker"><a href={`${base}category/${post.data.category.toLowerCase()}/`}>{post.data.category}</a></p>
+      <h1>{post.data.title}</h1><p class="subtitle">{post.data.subtitle}</p>
+    </header>
+    <img class="article-hero" src={`${base}${post.data.heroImage.replace(/^\//, '')}`} alt={post.data.heroAlt} />
+    <div class="article-layout">
+      <aside class="article-meta"><div><strong>Published</strong>{date}</div><div><strong>Filed under</strong>{post.data.tags.join(', ')}</div></aside>
+      <div class="prose"><Content />
+        {post.data.sources?.length && <section class="sources"><h2>Sources & references</h2><ol>{post.data.sources.map((source) => <li><a href={source.url} rel="external">{source.label}</a></li>)}</ol></section>}
+      </div>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import { categories } from '../../content.config';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StoryCard from '../../components/StoryCard.astro';
+export function getStaticPaths() { return categories.map((category) => ({ params: { category: category.toLowerCase() }, props: { category } })); }
+const { category } = Astro.props;
+const posts = (await getCollection('posts', ({ data }) => !data.draft && data.category === category)).sort((a,b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const descriptions = { Thinking: 'Essays on attention, judgment, and the ideas that shape a life.', Work: 'Notes on craft, ambition, collaboration, and making things that matter.', Technology: 'Human-scale perspectives on the tools changing how we live and work.', Culture: 'Books, media, rituals, and the stories a society tells itself.', Life: 'Personal observations about time, place, relationships, and everyday meaning.' };
+---
+<BaseLayout title={category} description={descriptions[category]}>
+  <header class="page-header"><p class="kicker">Section</p><h1>{category}</h1><p>{descriptions[category]}</p></header>
+  <div class="listing">{posts.map((post) => <StoryCard post={post} prominent />)}</div>
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { post: CollectionEntry<'posts'>; prominent?: boolean; }
+const { post, prominent = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const date = post.data.pubDate.toLocaleDateString('en', { month: 'short', day: 'numeric', year: 'numeric' });
+---
+<article class:list={['story-card', { prominent }]}>
+  {prominent && <a href={`${base}posts/${post.id}/`} class="card-image"><img src={`${base}${post.data.heroImage.replace(/^\//, '')}`} alt={post.data.heroAlt} loading="lazy" /></a>}
+  <div>
+    <p class="eyebrow"><a href={`${base}category/${post.data.category.toLowerCase()}/`}>{post.data.category}</a><span>{date}</span></p>
+    <h3><a href={`${base}posts/${post.id}/`}>{post.data.title}</a></h3>
+    <p class="dek">{post.data.description}</p>
+    <a class="read-link" href={`${base}posts/${post.id}/`}>Read story <span aria-hidden="true">→</span></a>
+  </div>
+</article>
