@@ -1,0 +1,14 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { withBase } from '../lib/paths';
+interface Props { post: CollectionEntry<'posts'>; }
+const { post } = Astro.props;
+const date = post.data.pubDate.toLocaleDateString('en', { month: 'long', day: 'numeric', year: 'numeric' });
+---
+<aside class="next-read" aria-labelledby={`next-read-${post.id}`}>
+  <p class="next-read-label">Next Read</p>
+  <h2 id={`next-read-${post.id}`}><a href={withBase(`posts/${post.id}/`)}>{post.data.title}</a></h2>
+  <p class="next-read-description">{post.data.description}</p>
+  <p class="next-read-meta">{post.data.category} · {date}</p>
+  <a class="read-link next-read-link" href={withBase(`posts/${post.id}/`)}>Read next <span aria-hidden="true">→</span></a>
+</aside>

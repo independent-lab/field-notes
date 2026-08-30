@@ -3,26 +3,60 @@ import { categories } from '../content.config';
 import { withBase } from '../lib/paths';
 ---
 <header class="site-header">
-  <a class="brand" href={withBase()} aria-label="Field Notes home">
-    <span class="brand-mark">FN</span>
-    <span>Field Notes</span>
-  </a>
-  <nav aria-label="Primary navigation">
-    <div class="section-links">
+  <div class="masthead-controls">
+    <a class="brand" href={withBase()} aria-label="Field Notes home">
+      <span class="brand-mark">FN</span>
+      <span>Field Notes</span>
+    </a>
+    <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+      <span>Menu</span><span class="menu-chevron" aria-hidden="true">⌄</span>
+    </button>
+  </div>
+  <nav class="site-menu" id="site-menu" aria-label="Primary navigation" hidden>
+    <div class="menu-group">
+      <p>Read</p>
       {categories.map((category) => <a href={withBase(`category/${category.toLowerCase()}/`)}>{category}</a>)}
     </div>
-    <div class="utility-links">
+    <div class="menu-group">
+      <p>Explore</p>
+      <a href={withBase('playx/')}>playX</a>
       <a href={withBase('archive/')}>Archive</a>
       <a href={withBase('about/')}>About</a>
+      <div class="menu-theme">
+        <span>Theme</span>
       <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
         <span class="sun" aria-hidden="true">☼</span><span class="moon" aria-hidden="true">◐</span>
       </button>
+      </div>
     </div>
   </nav>
 </header>
 <script is:inline>
-  const button = document.querySelector('.theme-toggle');
-  button?.addEventListener('click', () => {
+  const header = document.querySelector('.site-header');
+  const menuButton = header?.querySelector('.site-menu-toggle');
+  const menu = header?.querySelector('.site-menu');
+  const closeMenu = (returnFocus = false) => {
+    if (!menu || !menuButton) return;
+    menu.hidden = true;
+    menuButton.setAttribute('aria-expanded', 'false');
+    if (returnFocus) menuButton.focus();
+  };
+  menuButton?.addEventListener('click', () => {
+    if (!menu) return;
+    const willOpen = menu.hidden;
+    menu.hidden = !willOpen;
+    menuButton.setAttribute('aria-expanded', String(willOpen));
+  });
+  menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
+  document.addEventListener('click', (event) => {
+    if (header && !header.contains(event.target)) closeMenu();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu && !menu.hidden) closeMenu(true);
+  });
+
+  const themeButton = header?.querySelector('.theme-toggle');
+  themeButton?.addEventListener('click', () => {
     const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = next;
     localStorage.setItem('theme', next);

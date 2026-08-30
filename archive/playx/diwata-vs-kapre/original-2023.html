@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple 2D Shooter</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  canvas {
+    display: block;
+    background: black;
+  }
+  #fullscreen {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #ddd;
+    border: none;
+    border-radius: 5px;
+  }
+  #credits {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    padding: 8px;
+    border-radius: 5px;
+  }
+  #healthbar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 200px;
+    height: 20px;
+    background-color: #f00;
+    z-index: 1;
+  }
+  #health {
+    height: 100%;
+    background-color: #0f0;
+    width: 100%; /* Adjusted dynamically in script */
+  }
+</style>
+</head>
+<body>
+
+<canvas id="gameCanvas"></canvas>
+
+<button id="fullscreen">Fullscreen</button>
+<div id="credits">Made by Siklab Serye</div>
+<div id="healthbar"><div id="health"></div></div>
+
+<script>
+// Game Variables
+var canvas = document.getElementById("gameCanvas");
+var ctx = canvas.getContext("2d");
+canvas.width = 800;
+canvas.height = 400;
+
+var heroImg = new Image();
+heroImg.src = 'https://static.wixstatic.com/media/36aaf1_51dea2c352ff4a7e81df049b9d49da4a~mv2.png';
+
+var enemyImg = new Image();
+enemyImg.src = 'https://static.wixstatic.com/media/36aaf1_ec8b19b3098d494e9648f0a584d3aa04~mv2.png';
+
+var bulletImg = new Image();
+bulletImg.src = 'https://static.wixstatic.com/media/36aaf1_f0e92b37c3f3408bbc3c812da1f7ae3a~mv2.png';
+
+var backgroundImg = new Image();
+backgroundImg.src = 'https://static.wixstatic.com/media/36aaf1_7f0543e292b24742aaec48af8a0bb016~mv2.png';
+
+// Game settings
+var hero = {x: 50, y: 150, width: 100, height: 100, speedY: 5, health: 10, img: heroImg};
+var bullets = [];
+var enemies = [];
+var score = 0;
+var enemySpawnRate = 90; // Lower value spawns enemies more frequently
+var enemySpeed = 1.5; // Lower value means slower movement
+var gameRunning = true;
+var healthBar = document.getElementById("health");
+
+// Controls
+var keys = {};
+window.onkeydown = function(e) { keys[e.key] = true; };
+window.onkeyup = function(e) { keys[e.key] = false; };
+
+// Fullscreen button
+var fullscreenBtn = document.getElementById("fullscreen");
+fullscreenBtn.onclick = function() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen(); 
+    }
+  }
+};
+
+function update() {
+  // Hero movement
+  if (keys['ArrowUp']) hero.y -= hero.speedY;
+  if (keys['ArrowDown']) hero.y += hero.speedY;
+  
+  // Bound hero within game area
+  if (hero.y < 0) hero.y = 0;
+  if (hero.y > canvas.height - hero.height) hero.y = canvas.height - hero.height;
+
+  // Shooting
+  if (keys[' '] && gameRunning) { // When space is pressed
+    bullets.push({
+      x: hero.x + hero.width,
+      y: hero.y + hero.height / 2,
+      size: 20,
+      speed: 3,
+      img: bulletImg
+    });
+    keys[' '] = false; // Prevent continuous shooting when holding space
+  }
+
+  // Update bullet positions
+  bullets.forEach(function(bullet, i) {
+    bullet.x += bullet.speed;
+    // Remove bullets when they go off screen
+    if (bullet.x > canvas.width) {
+      bullets.splice(i, 1);
+    }
+  });
+
+  // Enemy spawning
+  if (Math.random() < 1 / enemySpawnRate) {
+    enemies.push({
+      x: canvas.width,
+      y: Math.random() * (canvas.height - 30),
+      width: 100,
+      height: 100,
+      img: enemyImg
+    });
+  }
+
+  // Update enemy positions
+  enemies.forEach(function(enemy, i) {
+    enemy.x -= enemySpeed;
+    // Remove enemies when they go off screen or when health is 0
+    if (enemy.x < -enemy.width || hero.health <= 0) {
+      enemies.splice(i, 1);
+      if (gameRunning) hero.health -= 1; // Reduce health when enemy passes
+    }
+  });
+
+  // Collision detection
+  bullets.forEach(function(bullet, bulletIndex) {
+    enemies.forEach(function(enemy, enemyIndex) {
+      if (bullet.x < enemy.x + enemy.width &&
+          bullet.x + bullet.size > enemy.x &&
+          bullet.y < enemy.y + enemy.height &&
+          bullet.y + bullet.size > enemy.y) {
+        // Collision detected!
+        score++;
+        bullets.splice(bulletIndex, 1);
+        enemies.splice(enemyIndex, 1);
+      }
+    });
+  });
+
+  // Game over when health is depleted
+  if (hero.health <= 0) {
+    gameRunning = false;
+  }
+
+  // Update health bar display
+  healthBar.style.width = `${hero.health * 10}%`; // Assuming max health is 10
+}
+
+function draw() {
+  // Clear canvas for redrawing
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  // Draw background
+  ctx.drawImage(backgroundImg, 0, 0, canvas.width, canvas.height);
+  
+  // Draw hero
+  ctx.drawImage(hero.img, hero.x, hero.y, hero.width, hero.height);
+
+  // Draw bullets
+  bullets.forEach(function(bullet) {
+    ctx.drawImage(bullet.img, bullet.x, bullet.y - bullet.size / 2, bullet.size, bullet.size);
+  });
+
+  // Draw enemies
+  enemies.forEach(function(enemy) {
+    ctx.drawImage(enemy.img, enemy.x, enemy.y, enemy.width, enemy.height);
+  });
+
+  // Draw score
+  ctx.fillStyle = 'white';
+  ctx.font = '24px Arial';
+  ctx.fillText(`Score: ${score}`, canvas.width / 2 - 50, canvas.height - 20);
+
+  // Game Over screen
+  if (!gameRunning) {
+    ctx.fillStyle = 'red';
+    ctx.font = '50px Arial';
+    ctx.fillText('GAME OVER', canvas.width / 2 - 150, canvas.height / 2);
+  }
+}
+
+function gameLoop() {
+  if (gameRunning) {
+    update();
+    draw();
+  }
+  requestAnimationFrame(gameLoop);
+}
+
+gameLoop(); // Start the game
+</script>
+</body>
+</html>

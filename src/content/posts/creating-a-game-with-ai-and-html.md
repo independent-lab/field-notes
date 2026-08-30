@@ -28,3 +28,5 @@ With *Diwata vs. Kapre*, I wanted to see what could happen when tradition met a 
 ## 2026 preservation note
 
 The original character art, background, and game assets survive in the Siklab Serye media archive. The original playable code has not yet been confidently recovered, so the game is not being presented as restored. It remains a candidate for a faithful playX rebuild alongside this historical account.
+
+<a class="read-link" href="/field-notes/playx/diwata-vs-kapre/">Play Diwata vs. Kapre <span aria-hidden="true">→</span></a>

@@ -4,6 +4,7 @@ import { categories } from '../../content.config';
 import { categorySlug } from '../../lib/categories';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import StoryCard from '../../components/StoryCard.astro';
+import { isPublishedPost } from '../../lib/posts';
 
 export function getStaticPaths() {
   return categories.map((category) => ({
@@ -13,7 +14,7 @@ export function getStaticPaths() {
 }
 
 const { category, slug } = Astro.props;
-const posts = (await getCollection('posts', ({ data }) => !data.draft))
+const posts = (await getCollection('posts')).filter((post) => isPublishedPost(post))
   .filter((post) => categorySlug(post.data.category) === slug)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const descriptions = { Thinking: 'Essays on attention, judgment, and the ideas that shape a life.', Work: 'Notes on craft, ambition, collaboration, and making things that matter.', Technology: 'Human-scale perspectives on the tools changing how we live and work.', Culture: 'Books, media, rituals, and the stories a society tells itself.', Life: 'Personal observations about time, place, relationships, and everyday meaning.' };

@@ -2,12 +2,14 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ShareLinks from '../../components/ShareLinks.astro';
+import NextRead from '../../components/NextRead.astro';
 import { withBase } from '../../lib/paths';
+import { isPublishedPost, selectNextRead } from '../../lib/posts';
 export async function getStaticPaths() {
-  const posts = await getCollection('posts', ({ data }) => !data.draft);
-  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+  const posts = (await getCollection('posts')).filter((post) => isPublishedPost(post));
+  return posts.map((post) => ({ params: { id: post.id }, props: { post, nextRead: selectNextRead(post, posts) } }));
 }
-const { post } = Astro.props;
+const { post, nextRead } = Astro.props;
 const { Content } = await render(post);
 const date = post.data.pubDate.toLocaleDateString('en', { month: 'long', day: 'numeric', year: 'numeric' });
 const canonicalPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
@@ -35,6 +37,7 @@ const articleStructuredData = {
       <aside class="article-meta"><div><strong>Published</strong><time datetime={post.data.pubDate.toISOString()}>{date}</time></div><div><strong>Filed under</strong>{post.data.tags.join(', ')}</div><ShareLinks url={canonicalUrl} title={post.data.title} shareText={post.data.socialCopy} placement="compact" /></aside>
       <div class="prose"><Content />
         {post.data.sources?.length && <section class="sources"><h2>Sources & references</h2><ol>{post.data.sources.map((source) => <li><a href={source.url} rel="external">{source.label}</a></li>)}</ol></section>}
+        {nextRead && <NextRead post={nextRead} />}
         <ShareLinks url={canonicalUrl} title={post.data.title} shareText={post.data.socialCopy} />
       </div>
     </div>

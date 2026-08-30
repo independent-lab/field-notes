@@ -9,6 +9,7 @@ const requiredFields = ['title', 'pubDate', 'category', 'heroImage', 'descriptio
 const errors = [];
 const featured = [];
 const slugs = new Map();
+const records = new Map();
 
 function scalar(frontmatter, key) {
   const match = frontmatter.match(new RegExp(`^${key}:\\s*(.+?)\\s*$`, 'm'));
@@ -51,6 +52,30 @@ for (const filename of readdirSync(postsDirectory).filter((name) => /\.mdx?$/.te
     if (!heroImage.startsWith('/')) errors.push(`${filename}: heroImage must be root-relative`);
     else if (!existsSync(join(publicDirectory, heroImage.slice(1)))) errors.push(`${filename}: missing referenced image ${heroImage}`);
   }
+
+  const draftValue = scalar(frontmatter, 'draft');
+  if (draftValue && !['true', 'false'].includes(draftValue)) errors.push(`${filename}: draft must be true or false`);
+  records.set(slug, {
+    filename,
+    publicationDate,
+    draft: draftValue === 'true',
+    nextRead: scalar(frontmatter, 'nextRead'),
+  });
+}
+
+for (const [slug, record] of records) {
+  if (!record.nextRead) continue;
+  if (record.nextRead === slug) {
+    errors.push(`${record.filename}: nextRead cannot recommend the current article`);
+    continue;
+  }
+  const target = records.get(record.nextRead);
+  if (!target) {
+    errors.push(`${record.filename}: nextRead target "${record.nextRead}" does not exist`);
+    continue;
+  }
+  if (target.draft) errors.push(`${record.filename}: nextRead target "${record.nextRead}" is a draft`);
+  if (target.publicationDate && Date.parse(target.publicationDate) > Date.now()) errors.push(`${record.filename}: nextRead target "${record.nextRead}" is future-dated`);
 }
 
 if (featured.length > 1) {
