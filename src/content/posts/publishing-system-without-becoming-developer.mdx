@@ -21,6 +21,8 @@ sources:
     url: https://docs.github.com/en/pages/getting-started-with-github-pages
 ---
 
+import ArticleImage from '../../components/ArticleImage.astro';
+
 I became bored on a Sunday evening and began experimenting with OpenAI Codex. This seemed harmless enough. Within a short period, I had created a local publication, previewed it in a browser, opened a GitHub repository, connected the project, configured a deployment workflow and published the site with GitHub Pages.
 
 Then the images broke.
@@ -56,6 +58,8 @@ My route into the project ran in the opposite direction. I started with the prod
 I knew what I wanted the publication to do. It needed sections, an archive, article pages, readable typography, dark mode and a workflow that could turn rough material into finished posts. It needed to deploy for free. It needed to remain simple enough that publishing did not become a second occupation devoted to maintaining the publishing system.
 
 Those constraints shaped the implementation. I did not need to know in advance how Astro defined a content schema. I needed to know that article metadata should be consistent and validated. I did not need to write a deployment workflow from memory. I needed to specify that a push to the main branch should build and publish the site, then verify that the workflow existed and succeeded.
+
+<ArticleImage src="/images/publishing-decisions-over-code.webp" alt="Two control levers and paper decision cards above visible blue mechanical layers producing a finished page" />
 
 This is a different form of technical participation. The human contribution shifts toward framing, constraints, acceptance criteria and judgment. The machine can handle much of the translation between those decisions and the code.
 

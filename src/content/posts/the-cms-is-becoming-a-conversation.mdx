@@ -13,6 +13,8 @@ featured: false
 draft: false
 ---
 
+import ArticleImage from '../../components/ArticleImage.astro';
+
 A content management system usually announces itself with an interface: a dashboard, text editor, media library, fields and a button whose meaning ranges from “save” to “tell the entire internet immediately.”
 
 Field Notes has all the underlying needs of a small CMS. It stores articles and metadata, assigns categories, manages images, builds pages, preserves an archive and decides what appears on the homepage. What it increasingly lacks is the familiar CMS screen.
@@ -54,6 +56,8 @@ Removing the dashboard does not remove the work a CMS performs. It makes that wo
 Content still needs structure. Categories must be exact enough to query. Images need stable paths and useful alt text. Publication dates must sort correctly. Drafts must remain private. A homepage needs deterministic rules when no article, one article or several articles are marked as featured. Changes need review, history and a route to recovery.
 
 In this experiment, those responsibilities are distributed across the content schema, repository, build process and publishing instructions. The conversational agent operates the pieces, but it does not get to redefine them casually. The system is useful because conversation sits on top of constraints, not because constraints have disappeared.
+
+<ArticleImage src="/images/cms-structured-responsibilities.webp" alt="A blue speech bubble above an orderly set of clipped paper modules for content, images, checks, dates and files" />
 
 This is also why the arrangement works particularly well for a one-person publication. The person giving the instruction is the editor, publisher and site owner. Ambiguity can be resolved against one editorial intention. The workflow can be opinionated because it serves one set of habits.
 
