@@ -8,9 +8,6 @@ heroImage: "/images/tranquil-steel-rack.jpg"
 heroAlt: "The boxed steel shelving unit laid out on a bed before assembly"
 description: "An inexpensive shelving project became a calming hands-on ritual and a more personal corner of home."
 featured: false
-sources:
-  - label: "Original Siklab Serye publication"
-    url: "https://julessalonga.wixsite.com/siklab-serye/post/building-a-tranquil-sanctuary-my-1-000-peso-steel-rack-project"
 ---
 
 > **From the archive**  

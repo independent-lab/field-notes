@@ -8,9 +8,6 @@ heroImage: "/images/bacon-beer-vet-visit.jpg"
 heroAlt: "Bacon and Beer, two English bulldogs, waiting together outside an elevator"
 description: "A routine vet visit with Bacon and Beer revealed an unseen fungal problem and reinforced the value of paying attention."
 featured: false
-sources:
-  - label: "Original Siklab Serye publication"
-    url: "https://julessalonga.wixsite.com/siklab-serye/post/a-tail-of-two-bulldogs-vaccines-fungal-woes-and-the-72-pound-adventures-of-bacon-and-beer"
 ---
 
 > **From the archive**  

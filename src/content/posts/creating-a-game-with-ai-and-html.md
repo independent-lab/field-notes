@@ -8,9 +8,6 @@ heroImage: "/images/diwata-vs-kapre-game.jpg"
 heroAlt: "Pixel-art scene showing Diwata and Kapre facing each other in a jungle game world"
 description: "A 2023 experiment in using DALL-E and HTML to create the Filipino folklore game Diwata vs. Kapre without prior coding experience."
 featured: false
-sources:
-  - label: "Original Siklab Serye publication"
-    url: "https://julessalonga.wixsite.com/siklab-serye/post/unveiling-the-magic-creating-a-game-with-ai-and-html"
 ---
 
 > **From the archive**  

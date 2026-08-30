@@ -21,7 +21,7 @@ const articleStructuredData = {
   datePublished: post.data.pubDate.toISOString(),
   image: imageUrl,
   mainEntityOfPage: canonicalUrl,
-  publisher: { '@type': 'Organization', name: 'Field Notes' },
+  publisher: { '@type': 'Organization', name: 'Independent Lab' },
 };
 ---
 <BaseLayout title={post.data.seoTitle ?? post.data.title} description={post.data.description} image={post.data.heroImage} imageAlt={post.data.heroAlt} ogType="article" publishedTime={post.data.pubDate} structuredData={articleStructuredData}>

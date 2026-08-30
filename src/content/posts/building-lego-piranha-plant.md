@@ -8,9 +8,6 @@ heroImage: "/images/lego-piranha-plant.jpg"
 heroAlt: "A completed LEGO Super Mario Piranha Plant displayed beside a computer monitor"
 description: "Building LEGO's Super Mario Piranha Plant became a tactile return to childhood afternoons in the Mushroom Kingdom."
 featured: false
-sources:
-  - label: "Original Siklab Serye publication"
-    url: "https://julessalonga.wixsite.com/siklab-serye/post/building-the-lego-super-mario-71426-piranha-plant-a-nostalgic-journey"
 ---
 
 > **From the archive**  

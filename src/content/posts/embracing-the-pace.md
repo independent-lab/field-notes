@@ -8,9 +8,6 @@ heroImage: "/images/embracing-the-pace.jpg"
 heroAlt: "Illustrated path winding toward a sunrise over a calm sea"
 description: "A New Year reflection on choosing mindful progress over speed and finding meaning in ordinary moments."
 featured: false
-sources:
-  - label: "Original Siklab Serye publication"
-    url: "https://julessalonga.wixsite.com/siklab-serye/post/embracing-the-pace-a-guide-to-navigating-the-new-year-with-grace-and-purpose"
 ---
 
 > **From the archive**  
