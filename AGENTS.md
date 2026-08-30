@@ -10,6 +10,15 @@ Use lowercase kebab-case filenames. Store web-ready images in `public/images` wi
 
 Preserve the author's core ideas, tone, and point of view. Improve structure, clarity, rhythm, transitions, and readability without turning personal experience into unsupported universal claims. Headlines should be specific, useful, and not clickbait. Descriptions should be concise and suitable for search and social previews. Add meaningful alt text for every image.
 
+## Editorial publishing conventions
+
+- **“Publish this normally”** means publish the article with `featured: false` (or omit `featured`) and leave the current homepage hero unchanged.
+- **“Publish this and make it the hero”** means publish the article with `featured: true` and clear `featured: true` from every other article.
+- **“Make [article] the hero”** means set that existing article to `featured: true` and clear the flag from every other article. Do not change publication dates to control homepage placement.
+- Archive migrations retain their original publication date in `pubDate`, include `From the archive` in `tags`, and carry a short visible archive note. Do not silently modernize old copy. Add an “Updated for Field Notes” note only when substantive new material was actually added.
+- Always create an optimized, metadata-free publication derivative in `public/images`; never serve an original or private source file directly. Preserve source media in `inbox` unchanged, and use descriptive lowercase kebab-case filenames plus meaningful alt text.
+- Future **playX** material should be added as ordinary editorial content first, with its own category, metadata, accessible fallback text, and publication derivative assets. Treat any interactive rebuild as a separate, explicitly scoped project rather than embedding unreviewed source files or executable code from `inbox`.
+
 ## Command: “Preview inbox”
 
 When the user says **“Preview inbox”**:

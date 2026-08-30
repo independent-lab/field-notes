@@ -5,5 +5,5 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort((a,
 ---
 <BaseLayout title="Archive" description="Every story published in Field Notes.">
   <header class="page-header"><p class="kicker">The complete index</p><h1>Archive</h1><p>Essays, field notes, and observations—ordered from newest to oldest.</p></header>
-  <section style="padding:35px 0 110px">{posts.map((post) => <article class="archive-row"><time>{post.data.pubDate.toLocaleDateString('en',{month:'short',year:'numeric'})}</time><h2><a href={withBase(`posts/${post.id}/`)}>{post.data.title}</a></h2><a class="archive-category" href={withBase(`category/${post.data.category.toLowerCase()}/`)}>{post.data.category}</a></article>)}</section>
+  <section style="padding:35px 0 110px">{posts.map((post) => <article class="archive-row"><time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en',{month:'short',year:'numeric'})}</time><h2><a href={withBase(`posts/${post.id}/`)}>{post.data.title}</a></h2><a class="archive-category" href={withBase(`category/${post.data.category.toLowerCase()}/`)}>{post.data.category}</a></article>)}</section>
 </BaseLayout>

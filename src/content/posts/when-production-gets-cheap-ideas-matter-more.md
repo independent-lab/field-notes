@@ -5,7 +5,7 @@ seoTitle: When AI Makes Production Cheap, Ideas Become Scarce
 pubDate: 2026-08-28
 category: Thinking
 tags: [AI, authorship, ideas, judgment, publishing]
-heroImage: /images/production-cheap-ideas-matter.png
+heroImage: /images/production-cheap-ideas-matter.webp
 heroAlt: A field of repeated ivory cards surrounding one cobalt-blue card marked with a singular orange gesture
 description: If AI makes drafting and publishing dramatically easier, original perspective, judgment, curiosity and taste become more valuable, not less.
 socialCopy: When production becomes abundant, the scarce part is not another finished page. It is the judgment and original thought that give the page a reason to exist.

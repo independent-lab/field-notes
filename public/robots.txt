@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://independent-lab.github.io/field-notes/sitemap-index.xml

@@ -5,7 +5,7 @@ seoTitle: Productive Friction vs. Organizational Waste
 pubDate: 2026-08-30
 category: Work
 tags: [leadership, organizations, career, bureaucracy]
-heroImage: /images/paid-the-overhead-reward.png
+heroImage: /images/paid-the-overhead-reward.webp
 heroAlt: A winding maze of translucent paper barriers and brass clips leading toward a small cobalt-blue box
 description: A skeptical look at the difference between productive career friction and organizational waste, and what leaders should do about both.
 socialCopy: Difficulty is not automatically evidence of progress. The useful question is whether the overhead is buying scope, capability, authority, or a credible next step.
