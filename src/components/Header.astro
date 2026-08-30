@@ -1,19 +1,19 @@
 ---
 import { categories } from '../content.config';
-const base = import.meta.env.BASE_URL;
+import { withBase } from '../lib/paths';
 ---
 <header class="site-header">
-  <a class="brand" href={base} aria-label="Field Notes home">
+  <a class="brand" href={withBase()} aria-label="Field Notes home">
     <span class="brand-mark">FN</span>
     <span>Field Notes</span>
   </a>
   <nav aria-label="Primary navigation">
     <div class="section-links">
-      {categories.map((category) => <a href={`${base}category/${category.toLowerCase()}/`}>{category}</a>)}
+      {categories.map((category) => <a href={withBase(`category/${category.toLowerCase()}/`)}>{category}</a>)}
     </div>
     <div class="utility-links">
-      <a href={`${base}archive/`}>Archive</a>
-      <a href={`${base}about/`}>About</a>
+      <a href={withBase('archive/')}>Archive</a>
+      <a href={withBase('about/')}>About</a>
       <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
         <span class="sun" aria-hidden="true">☼</span><span class="moon" aria-hidden="true">◐</span>
       </button>
