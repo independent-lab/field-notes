@@ -33,3 +33,13 @@ Multiplayer was where *Super Mario Bros. Wonder* truly shone for me. Playing wit
 The game respected what made the series endure while still finding room to surprise. Whether playing alone or with friends, it felt both comfortably familiar and genuinely new.
 
 **Rating: 9/10**
+
+## Updated for Field Notes · 2026
+
+The 9/10 at the end looks abrupt now, but the judgment underneath it still holds. I was not responding only to polish or to the pleasure of recognizing Mario again. The game understood that familiarity creates a design problem: the clearer the player’s expectations become, the more carefully a new entry has to decide when to satisfy them and when to interrupt them.
+
+That is why the level design and badges mattered more to me than a list of new features. The controls supplied confidence. The changing rules supplied curiosity. A good stage let prior knowledge carry me far enough to notice exactly where the game had begun behaving differently.
+
+Publishing this beside the LEGO Piranha Plant review also clarifies what kind of nostalgia interested me in 2023. The LEGO set slowed a familiar enemy down until I could examine how its shape was constructed. *Wonder* did the opposite: it took a familiar system and made it unstable again. Both returned to old material without treating preservation as repetition.
+
+I would still keep the high rating because surprise did not come at the cost of readability. The game remained easy to enter even when a level changed its premise. That balance—recognizable enough to trust, strange enough to inspect—is more specific than simply saying it felt both old and new.

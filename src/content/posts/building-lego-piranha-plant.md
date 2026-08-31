@@ -28,3 +28,13 @@ The finished model is playful and immediately recognizable. Its movable head, mo
 That is what I enjoyed most about the set. It connected two kinds of play: the digital rhythm of running and jumping through Mario’s worlds, and the physical satisfaction of making something one brick at a time.
 
 The completed Piranha Plant is a modern display piece, but the memory inside it is much older.
+
+## Updated for Field Notes · 2026
+
+This build and my review of *Super Mario Bros. Wonder* were published on the same day. Read together, they capture two different ways an old game can remain active in the present. One asks what Nintendo can still do with movement, levels, music, and surprise. The other takes a familiar obstacle out of the game and makes it available for inspection on a shelf.
+
+That reversal is still the detail I like most. In the games, a Piranha Plant is something to time, avoid, or defeat. During the build, the threat became a sequence of ordinary decisions: pipe, stem, leaves, jaw, teeth. Slowing the character down did not drain it of personality. It made the design easier to appreciate.
+
+The finished model sits beside a computer monitor in the surviving photograph, which feels like the right border between its two lives. It belongs to the physical room, with visible hinges and bricks, but it points back toward the screen and the movement that gave those shapes meaning.
+
+I have become more interested in that exchange between digital and physical play. The model is not valuable because nostalgia automatically improves an object. It works because the set translates memory into a different activity. The old recognition gets your attention; the act of building gives that attention somewhere to go.

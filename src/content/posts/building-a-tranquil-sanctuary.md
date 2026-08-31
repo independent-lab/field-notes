@@ -28,3 +28,13 @@ Once it was standing, the useful part of the project was complete. The more pers
 It was still an inexpensive rack. But the things it gathered—and the small act of making space for them—changed the corner around it.
 
 The project reminded me that calm does not always require getting away from ordinary life. Sometimes it comes from working with your hands, placing one piece after another, and giving the things you care about somewhere to belong.
+
+## Updated for Field Notes · 2026
+
+The retained photographs tell this story more precisely than the word “sanctuary” does. The first frame is a flat package on the bed. Then the boards, metal uprights, instructions, and hardware are spread out. The rack appears as an open frame beside the desk before the shelves begin to hold the objects that had been waiting for a place.
+
+Looking through that sequence now, the satisfying part is how legible the work was. The parts were finite. The next action was visible. Progress could be checked by standing the frame upright, adding a shelf, and seeing whether it held. There was no need to invent a grand purpose for the hour; the object supplied enough structure on its own.
+
+The final photographs also resist the fantasy of a perfectly styled room. The rack joined a working space: computer, chair, bed, window, books, toys, and the ordinary evidence of a room in use. Its success was not that it transformed the space into something unrecognizable. It gave a crowded collection a clearer shape without removing the personality that created the crowd.
+
+Field Notes now contains more complicated making projects, including a publication assembled through code and conversation. The steel rack remains a useful counterweight. Tools can change and systems can become abstract, but making becomes understandable when decisions leave visible consequences. One piece connects to another; an empty structure acquires a purpose; the room works a little better than it did before.

@@ -30,3 +30,13 @@ Allowing ourselves time to recharge is not surrender, but a strategic play. In *
 **The art scenes in BGC.** Art can interrupt routine. BGC’s murals and galleries offer an invitation to step out of the everyday for a moment and let the mind wander.
 
 When burnout casts its shadow, remember the value of a checkpoint. Take a moment, find a place that lets you pause, and return with more of yourself available for whatever comes next.
+
+## Updated for Field Notes · 2026
+
+I still like the respawn metaphor because it makes stopping feel active. A checkpoint is not the opposite of progress. It is part of the design that allows progress to continue. The café, the cooler air outside Manila, and the interruption of looking at art were concrete ways the 2023 piece tried to give that pause a location.
+
+What the metaphor did not ask clearly enough was what the player is returning to. A break can restore attention, but it cannot turn every system into a worthwhile one. A later Field Note distinguishes productive friction—the difficulty that builds judgment or improves the work—from organizational waste that merely consumes time and energy. Rest matters in both conditions, but only one may deserve another attempt under the same rules.
+
+That changes the question I would carry to a checkpoint now. Not only “How do I recover?” but “What am I recovering for?” Sometimes the answer is a difficult piece of work that remains meaningful once energy returns. Sometimes the low-health warning is information about the structure around the work: unclear ownership, repeated decisions, or effort that buys no durable result.
+
+Respawning is useful when it restores agency, not when it becomes an instruction to tolerate the same damage indefinitely. The pause creates enough distance to notice the difference. Recovery can prepare us to continue, but it can also prepare us to change the level, the strategy, or the terms of play.

@@ -25,8 +25,14 @@ The original desktop game used the up and down arrow keys to move and the spaceb
 
 With *Diwata vs. Kapre*, I wanted to see what could happen when tradition met a new technology: Filipino folklore reimagined through AI-assisted art and a first encounter with HTML.
 
-## 2026 preservation note
+## Updated for Field Notes · 2026
 
-The original character art, background, and game assets survive in the Siklab Serye media archive. The original playable code has not yet been confidently recovered, so the game is not being presented as restored. It remains a candidate for a faithful playX rebuild alongside this historical account.
+The original character art, background, prompt language, and basic rules survived in the Siklab Serye archive even though the original playable code was not confidently recovered. That was enough to rebuild *Diwata vs. Kapre* for playX in 2026 without pretending the reconstruction was the untouched 2023 file. The preserved version keeps the central action—move, fire, and stop ten Kapres from passing—while adding keyboard, touch, and fullscreen controls for the site that now contains it.
+
+The reconstruction also sharpens something the original post described too simply. “No code experience” was true of my starting point, but it did not mean code had disappeared. HTML and game logic still existed beneath the result. AI shortened the distance between an idea and a playable object; it did not remove the need to specify rules, choose assets, test behavior, and decide what counted as faithful.
+
+That distinction now sits at the center of how I think about AI-assisted making. The machine can translate direction into implementation, but the direction still needs a point of view. Choosing Diwata and Kapre, placing Filipino folklore inside a small browser game, retaining the prompt that shaped the character, and deciding to preserve the imperfect experiment were not mechanical steps.
+
+The game remains modest. That is part of its value. It records the moment when a prompt stopped being only an image request and became one component in a working system. The important change was not that AI made a sophisticated game. It was that the doorway into making one moved close enough for curiosity to cross.
 
 <a class="read-link" href="/field-notes/playx/diwata-vs-kapre/">Play Diwata vs. Kapre <span aria-hidden="true">→</span></a>
