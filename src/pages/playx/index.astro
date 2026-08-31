@@ -9,8 +9,8 @@ import { playXExperiences } from '../../data/playx';
     <h1>playX</h1>
     <p>Games, experiments and other things meant to be played with.</p>
   </header>
-  <section class="playx-list" aria-labelledby="playx-games">
-    <div class="section-heading"><h2 id="playx-games">Games</h2></div>
+  <section class="playx-list" aria-labelledby="playx-experiences">
+    <div class="section-heading"><h2 id="playx-experiences">Experiences</h2></div>
     <div class="playx-grid">
       {playXExperiences.map((experience) => <a class="playx-card" href={withBase(`playx/${experience.slug}/`)}>
         <img src={withBase(experience.image)} alt={experience.imageAlt} />
