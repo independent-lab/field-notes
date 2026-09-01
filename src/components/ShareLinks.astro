@@ -4,9 +4,10 @@ interface Props {
   title: string;
   shareText?: string;
   placement?: 'compact' | 'full';
+  subject?: 'Post' | 'Experience';
 }
 
-const { url, title, shareText, placement = 'full' } = Astro.props;
+const { url, title, shareText, placement = 'full', subject = 'Post' } = Astro.props;
 const encodedUrl = encodeURIComponent(url);
 const encodedText = encodeURIComponent(shareText ?? title);
 const links = [
@@ -15,8 +16,8 @@ const links = [
   { label: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`, icon: 'linkedin' },
 ];
 ---
-<div class:list={['share-block', `share-block--${placement}`]} aria-label={placement === 'compact' ? 'Share this article' : undefined}>
-  {placement === 'compact' ? <p class="share-heading">Share Post</p> : <h2 class="share-heading">Share Post</h2>}
+<div class:list={['share-block', `share-block--${placement}`]} aria-label={placement === 'compact' ? `Share this ${subject.toLowerCase()}` : undefined}>
+  {placement === 'compact' ? <p class="share-heading">Share {subject}</p> : <h2 class="share-heading">Share {subject}</h2>}
   <div class="share-actions">
     {links.map((link) => (
       <a class:list={['share-button', `share-button--${link.icon}`]} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={`Share on ${link.label}`} title={`Share on ${link.label}`}>

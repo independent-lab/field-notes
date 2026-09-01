@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ShareLinks from '../../components/ShareLinks.astro';
 import { withBase } from '../../lib/paths';
 import { playXExperiences } from '../../data/playx';
 const experience = playXExperiences.find(({ slug }) => slug === 'ber-calculator')!;
+const canonicalUrl = new URL(withBase('playx/ber-calculator/'), Astro.site).toString();
 ---
 <BaseLayout title="The Ber Calculator — playX" pageTitle="The Ber Calculator — playX | Field Notes" description={experience.description} image={experience.image} imageAlt={experience.imageAlt}>
   <header class="ber-hero">
@@ -64,6 +66,7 @@ const experience = playXExperiences.find(({ slug }) => slug === 'ber-calculator'
 
     <aside class="method-note"><h2>Planning estimate only</h2><p>Actual payroll deductions and withholding may vary depending on compensation structure, employer annualization, benefits and statutory contribution rules. The calculator assumes one Philippine employer, regular basic salary and no unpaid absences. It does not store or transmit your salary.</p><p class="source-links"><a href="https://bir-cdn.bir.gov.ph/BIR/pdf/RMC%20No.%2034-2025%20Annex%20A.pdf">BIR tax schedule</a><a href="https://www.sss.gov.ph/pay-contribution/">SSS contributions</a><a href="https://www.gsis.gov.ph/active-members/contributions/">GSIS contributions</a><a href="https://www.philhealth.gov.ph/advisories/2025/PA2025-0002.pdf">PhilHealth premium</a><a href="https://www.pagibigfund.gov.ph/document/pdf/payments/AcceptingPagIBIGPaymentsThroughOTC_24%20JAN%202025.pdf">Pag-IBIG membership savings</a></p></aside>
   </div>
+  <ShareLinks url={canonicalUrl} title={experience.title} shareText="Plan your Philippine Ber-month savings and Christmas budget with the PlayX BER Calculator." subject="Experience" />
   <footer class="provenance">Created for playX in 2026 from an original photograph supplied by the author.</footer>
   <script src="../../scripts/ber-calculator.ts"></script>
 </BaseLayout>
